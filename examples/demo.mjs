@@ -1,0 +1,2 @@
+// Purpose: Demonstrate advertiser policy differences with synthetic risk fixtures.
+import{classify,FakeJev}from'../src/index.mjs';const taxonomy={version:'demo',categories:[{id:'news',children:[{id:'politics'}]}]},risks={dimensions:[{id:'crime'}]},provider=new FakeJev({top:{choice:'news'},child:{choice:'politics'},crime:{severity:2,probability:.9}});console.log(await classify({html:'<h1>Election report</h1>'},{taxonomy,risks,policy:{version:'1',maxRisk:{crime:1}},provider}));

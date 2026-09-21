@@ -1,0 +1,7 @@
+# Purpose: Exclude dependencies, disk cache and shadow logs.
+node_modules/
+.local/
+local-data/
+*.sqlite*
+dist/
+.jev-cache*
