@@ -19,6 +19,10 @@ Pass one chooses a top category. Pass two chooses a child and fans out configure
 ## Standards and boundaries
 Editable data is intended to map to [IAB Tech Lab Content Taxonomy 3.1](https://iabtechlab.com/standards/content-taxonomy/) and the historical [GARM Brand Safety Floor + Suitability Framework](https://wfanet.org/knowledge/item/2022/06/17/GARM-Brand-Safety-Floor--Suitability-Framework-3); WFA states GARM was discontinued on 8 August 2024. This project is not affiliated with or certified by IAB Tech Lab, WFA, GARM, any measurement vendor, or standards body, and claims no accreditation. Operator configuration—not bundled labels—is authoritative. No live benchmark is claimed.
 
+## Shareable demo report
+
+Run `npm run demo:report` to capture this repository’s bundled example as one JSON object with the project purpose, version and complete demo output. The command fails if the demo fails, so the report is useful when sharing a reproducible first look or reporting unexpected behavior. The bundled demo’s data and safety boundaries still apply.
+
 ## Validation
 Run `npm run check && npm run typecheck && npm test && npm run demo`; CI uses Node 22 and 24.
 
