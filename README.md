@@ -14,6 +14,8 @@ Set `TYPESAFE_API_KEY` before a reviewed adapter sends paid requests to `api.typ
 Import `classify`, `batch`, `decide`, `extractHtml`, `fetchText`, `DiskCache`, and `FakeJev`. Flat text/HTML objects are supported; the returned categories, risk vector, decision, reason, and cache-hit flag fit a bid-time content integration.
 
 ## How it decides
+
+Run `node examples/policy-contrast.mjs` to apply three advertiser-owned limits to one synthetic risk vector: block, review and allow. The policy changes the action; the fixture does not claim measured classifier quality. / Trois limites de l'annonceur donnent bloquer, revoir ou autoriser sur le même risque synthétique. / Tres límites del anunciante producen bloquear, revisar o permitir ante el mismo riesgo sintético.
 Pass one chooses a top category. Pass two chooses a child and fans out configured risk severity questions. Excluded categories and maximum risk per dimension are code-owned policy. Shadow mode logs the raw block while returning allow. Cache identity includes content, taxonomy version and policy version.
 
 ## Standards and boundaries
