@@ -40,3 +40,15 @@ FR : adaptez une copie de la fixture locale à cette situation, puis vérifiez l
 EN: adapt a copy of the local fixture to this situation, then check the behavior described above. Values are illustrative, not measured Jev output.
 
 ES: adapte una copia de la fixture local a esta situación y compruebe el comportamiento descrito arriba. Los valores son ilustrativos, no resultados Jev medidos.
+
+## Second cas · Second case · Segundo caso
+
+```text
+policy_version=2; same_page=true; old_cache_version=1
+```
+
+**FR :** Après une modification de politique, ne réutilisez pas un verdict d’une autre version. Comparez la décision et l’identifiant de politique avant un placement publicitaire.
+
+**EN:** After a policy change, do not reuse a verdict from another version. Compare the decision and policy identifier before placing an ad.
+
+**ES:** Tras cambiar una política, no reutilice un dictamen de otra versión. Compare la decisión y el identificador de política antes de colocar un anuncio.
