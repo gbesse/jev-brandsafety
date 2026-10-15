@@ -27,3 +27,9 @@ test('malformed semantic replies cannot default to harmless risks',async()=>{
   await assert.rejects(classify({text:'x'},{taxonomy,risks,provider:new FakeJev({top:{choice:'news'},child:{choice:'politics'},crime})}),/out of contract/);
  }
 });
+
+test('nonfinite policies and nonportable custom cache identities fail before cache lookup',async()=>{
+ const cache={get(){throw new Error('must not reach cache');}};
+ await assert.rejects(classify({text:'x'},{taxonomy,risks,cache,policy:{maxRisk:{crime:NaN}}}),/Invalid policy/);
+ await assert.rejects(classify({text:'x'},{taxonomy,risks,cache,provider:{cacheIdentity:()=>{},judge(){throw Error('must not call');}}}),/Invalid policy/);
+});
