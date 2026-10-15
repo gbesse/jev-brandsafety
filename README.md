@@ -36,3 +36,11 @@ Independent project; not affiliated with TypeSafe AI. [API docs](https://docs.ty
 ## Contrôle d’adoption · Adoption check · Comprobación de adopción
 
 [Français : essayer un cas concret](examples/adoption-check.md) · [English: try a concrete case](examples/adoption-check.md) · [Español: pruebe un caso concreto](examples/adoption-check.md).
+
+## Complete cache context / Contexte complet / Contexto completo
+
+EN: Cache keys now bind complete taxonomy, risk dimensions, policy content, provider identity and shadow mode. Reusing a version label cannot carry a shadow `allow` into enforcement. Fake fixture contents identify the synthetic provider; custom providers cache only when they supply a stable `cacheIdentity` that changes with configuration. Returned objects are detached from cache values. Missing/out-of-range risk replies and invented categories fail instead of defaulting to harmless severity. This is a decision aid, not a validated advertiser-safety benchmark.
+
+FR : Le cache lie désormais taxonomie complète, dimensions de risque, contenu de politique, identité fournisseur et mode shadow. Réutiliser un numéro de version ne transfère plus un `allow` simulé vers l’application réelle. Les fixtures identifient le fournisseur synthétique ; un fournisseur personnalisé n’utilise le cache qu’avec un `cacheIdentity` stable qui change avec sa configuration. Les sorties sont détachées du cache. Risques absents/hors limites et catégories inventées échouent au lieu de devenir un risque nul. Il s’agit d’une aide à la décision, pas d’un benchmark validé de sûreté publicitaire.
+
+ES: La caché vincula taxonomía completa, dimensiones de riesgo, política, identidad de proveedor y modo shadow. Reutilizar versión ya no transfiere un `allow` simulado a aplicación real. Fixtures identifican al proveedor sintético; proveedores personalizados solo usan caché con `cacheIdentity` estable que cambie con configuración. Salidas separadas de valores en caché. Riesgos ausentes/fuera de rango y categorías inventadas fallan en vez de asumir riesgo nulo. Es ayuda a la decisión, no benchmark validado de seguridad publicitaria.
