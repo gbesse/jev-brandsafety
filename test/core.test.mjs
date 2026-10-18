@@ -33,3 +33,22 @@ test('nonfinite policies and nonportable custom cache identities fail before cac
  await assert.rejects(classify({text:'x'},{taxonomy,risks,cache,policy:{maxRisk:{crime:NaN}}}),/Invalid policy/);
  await assert.rejects(classify({text:'x'},{taxonomy,risks,cache,provider:{cacheIdentity:()=>{},judge(){throw Error('must not call');}}}),/Invalid policy/);
 });
+
+
+test('ambiguous taxonomy and question identities fail before provider or cache work',async()=>{
+ const invalid=[
+  {taxonomy:{categories:[]},risks},
+  {taxonomy:{categories:[{id:'news',children:[]}]},risks},
+  {taxonomy:{categories:[...taxonomy.categories,taxonomy.categories[0]]},risks},
+  {taxonomy:{categories:[{id:'news',children:[{id:'news'}]}]},risks},
+  {taxonomy,risks:{dimensions:[{id:'crime'},{id:'crime'}]}},
+  {taxonomy,risks:{dimensions:[{id:'child'}]}},
+  {taxonomy,risks:{dimensions:[{id:'top'}]}},
+  {taxonomy,risks:{dimensions:[{id:' '}]}},
+ ];
+ for(const configuration of invalid){let calls=0;await assert.rejects(classify({text:'synthetic'},{...configuration,provider:{cacheIdentity:'x',async judge(){calls++;throw Error('must not call');}},cache:{get(){calls++;throw Error('must not read');}}}),/Invalid taxonomy/);assert.equal(calls,0);}
+});
+test('ordinal semantic severity must be an integer and cannot bypass a policy boundary',async()=>{
+ const provider=new FakeJev({top:{choice:'news'},child:{choice:'politics'},crime:{severity:1.5,probability:.9}});
+ await assert.rejects(classify({text:'synthetic'},{taxonomy,risks,provider,policy:{maxRisk:{crime:2}}}),/out of contract/);
+});
