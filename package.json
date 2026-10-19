@@ -1,6 +1,6 @@
 {
   "name": "@gbesse/jev-brandsafety",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Versioned two-pass content taxonomy and advertiser-owned suitability decisions.",
   "type": "module",
   "exports": {
