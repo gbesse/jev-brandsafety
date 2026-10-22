@@ -59,3 +59,11 @@ ES: La taxonomía se valida antes de caché o proveedor: categorías e hijos no 
 **EN.** A harmless prefix can no longer authorize a truncated page. `classify` adds `content`: normalized/analyzed lengths, truncation flag and UTF-8 SHA-256 of the original source string. A policy allow becomes review (`truncated_content`) for clipped text; an already justified block remains blocked. Empty extracted text requires review without semantic calls. Cache keys include complete source identity: different tails sharing a prefix no longer reuse one receipt. Limits use JavaScript UTF-16 units: integer `maxChars` from 1 to 1,000,000 and source at most 1,000,000. This establishes neither advertiser safety nor facts omitted from the supplied document.
 
 **ES.** Un prefijo sin riesgo ya no autoriza una página truncada. `classify` añade `content`: longitudes normalizada/analizada, indicador de truncado y SHA-256 UTF-8 de la cadena fuente original. Una autorización pasa a revisión (`truncated_content`) con texto cortado; un bloqueo justificado permanece. Texto extraído vacío exige revisión sin llamadas semánticas. La caché incluye la fuente completa: finales distintos con igual prefijo no reutilizan recibo. Límites en unidades UTF-16 JavaScript: `maxChars` entero de 1 a 1 000 000 y fuente máxima de 1 000 000. No demuestra seguridad publicitaria ni hechos ausentes del documento proporcionado.
+
+## Shadow evidence snapshots / Instantanés / Instantáneas
+
+FR — Le journal shadow reçoit une copie détachée du résultat, comme le cache. Modifier la décision retournée ou le journal ne réécrit plus l’autre preuve ; les décisions imbriquées et les risques sont couverts.
+
+EN — The shadow log receives a detached result snapshot, like the cache. Mutating the returned decision or log no longer rewrites the other evidence; nested decisions and risks are covered.
+
+ES — El registro shadow recibe una copia separada del resultado, como la caché. Modificar la decisión devuelta o el registro ya no reescribe la otra prueba; incluye decisiones y riesgos anidados.
